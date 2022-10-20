@@ -6,8 +6,7 @@
                 "-t",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-app",
                 "./Dockerfile.app"
-            ],
-            "TODO": "add script tag to indicate which steps have been performed"
+            ]
         },
         {
             "name": "gcr.io/cloud-builders/docker",
