@@ -16,7 +16,9 @@
                 "build",
                 "-t",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery",
-                "./Dockerfile.celery"
+                "-f",
+                "./Dockerfile.celery",
+                "."
             ]
         },
         {
