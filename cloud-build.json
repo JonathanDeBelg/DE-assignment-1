@@ -24,12 +24,8 @@
         {
             "name": "gcr.io/cloud-builders/docker",
             "args": [
-                "build",
-                "-t",
-                "redis",
-                "-f",
-                "./Dockerfile.redis",
-                "."
+                "pull",
+                "redis"
             ]
         },
         {
