@@ -26,7 +26,10 @@
             "args": [
                 "build",
                 "-t",
-                "redis"
+                "redis",
+                "-f",
+                "./Dockerfile.redis",
+                "."
             ]
         },
         {
