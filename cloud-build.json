@@ -6,7 +6,8 @@
                 "-t",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-app",
                 "-f",
-                "./Dockerfile.app"
+                "./Dockerfile.app",
+                "."
             ]
         },
         {
