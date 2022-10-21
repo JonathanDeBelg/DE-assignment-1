@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 MODEL_PATH = "model.pkl"
 
 print("Loading data...")
-X, y = load_iris(return_X_y=True, as_frame=True)
+X, y = load_iris(return_X_y=True)
 
 print("Building & training model...")
 model = LogisticRegression(max_iter=100_000)
