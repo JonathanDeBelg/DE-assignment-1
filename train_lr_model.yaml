@@ -29,15 +29,15 @@ implementation:
       \ json\n    import logging \n    import sys\n    import os\n    import joblib\n\
       \n    logging.basicConfig(stream=sys.stdout, level=logging.INFO)\n\n    df =\
       \ pd.DataFrame.from_dict(features)  \n\n    logging.info(f\"Cols: {df.columns}\"\
-      )        \n\n    x_train, x_test, y_train, y_test = train_test_split(df.drop('target',axis=1),\
-      \ \n                                                        df['target'], test_size=0.30,\
-      \ \n                                                        random_state=101)\n\
-      \n    model = LogisticRegression(max_iter=1000)\n    model.fit(x_train,y_train)\n\
-      \n    metrics = {\n        \"accuracy\": model.score(x_test, y_test)\n    }\n\
-      \    logging.info(metrics)\n\n    # Save the model localy\n    local_file =\
-      \ '/tmp/' + MODEL_PATH\n    joblib.dump(model, local_file)\n    # write out\
-      \ output\n\n    # Save to GCS as model.h5\n    client = storage.Client(project=project_id)\n\
-      \    bucket = client.get_bucket(model_repo)\n    blob = bucket.blob(MODEL_PATH)\n\
+      )        \n\n    x_train, x_test, y_train, y_test = train_test_split(df.drop(['target',\"\
+      Unnamed: 0\"],axis=1), \n                                                  \
+      \      df['target'], test_size=0.30, \n                                    \
+      \                    random_state=101)\n\n    model = LogisticRegression(max_iter=1000)\n\
+      \    model.fit(x_train,y_train)\n\n    metrics = {\n        \"accuracy\": model.score(x_test,\
+      \ y_test)\n    }\n    logging.info(metrics)\n\n    # Save the model localy\n\
+      \    local_file = '/tmp/local_model.pkl'\n    joblib.dump(model, local_file)\n\
+      \    # write out output\n\n    # Save to GCS as model.h5\n    client = storage.Client(project=project_id)\n\
+      \    bucket = client.get_bucket(model_repo)\n    blob = bucket.blob('lrmodel.pkl')\n\
       \   # Upload the locally saved model\n    blob.upload_from_filename(local_file)\n\
       \n    print(\"Saved the model to GCP bucket : \" + model_repo)\n    return metrics\n\
       \ndef _serialize_json(obj) -> str:\n    if isinstance(obj, str):\n        return\

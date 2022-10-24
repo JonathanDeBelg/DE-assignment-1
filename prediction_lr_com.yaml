@@ -26,8 +26,8 @@ implementation:
       \    import logging\n    import sys\n    import os\n\n    logging.basicConfig(stream=sys.stdout,\
       \ level=logging.INFO)\n\n    df = pd.DataFrame.from_dict(features)    \n\n \
       \   client = storage.Client(project=project_id)\n    bucket = client.get_bucket(model_repo)\n\
-      \    blob = bucket.blob(MODEL_PATH)\n    filename = '/tmp/' + MODEL_PATH\n \
-      \   blob.download_to_filename(filename)\n\n    #Loading the saved model with\
+      \    blob = bucket.blob('lrmodel.pkl')\n    filename = '/tmp/local_model.pkl'\n\
+      \    blob.download_to_filename(filename)\n\n    #Loading the saved model with\
       \ joblib\n    model = joblib.load(filename)\n\n    logging.info(df.columns)\n\
       \n    xNew = df[[\"sepal length (cm)\",\"sepal width (cm)\",\"petal length (cm)\"\
       ,\"petal width (cm)\"]]\n\n    dfcp = df.copy()   \n    y_classes = model.predict(xNew)\n\
