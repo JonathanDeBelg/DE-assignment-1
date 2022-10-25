@@ -41,6 +41,13 @@
                 "push",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
+        },
+        {
+            "name": "gcr.io/cloud-builders/docker-compose",
+            "args": [
+                "up",
+                "-d"
+            ]
         }
     ]
 }
