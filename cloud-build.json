@@ -43,10 +43,28 @@
             ]
         },
         {
-            "name": "gcr.io/cloud-builders/docker-compose",
+            "name": "gcr.io/cloud-builders/docker",
             "args": [
-                "up",
-                "-d"
+                "run",
+                "gcr.io/$PROJECT_ID/flask-celery-ml-app"
+            ]
+        },
+        {
+            "name": "gcr.io/cloud-builders/docker",
+            "args": [
+                "run",
+                "gcr.io/$PROJECT_ID/flask-celery-ml-celery",
+                "-p 5000:5000"
+            ]
+        },
+        {
+            "name": "gcr.io/cloud-builders/docker",
+            "args": [
+                "run",
+                "redis",
+                "-v redis_data/:data",
+                "-p 6379:6379",
+                "-e CELERY_BROKER_URL=redis://redis"
             ]
         }
     ]
