@@ -72,9 +72,8 @@
                 "deploy",
                 "-v redis_data/:data",
                 "-p 6379",
-                "-e CELERY_BROKER_URL=redis://redis"
-            ],
-            "images": [
+                "-e CELERY_BROKER_URL=redis://redis",
+                "--image",
                 "redis"
             ]
         }
