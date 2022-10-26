@@ -54,7 +54,7 @@
             "name": "gcr.io/cloud-builders/docker",
             "args": [
                 "run",
-                "-p 127.0.0.1:5001:5000",
+                "-p 16000:5000",
                 "-d",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
