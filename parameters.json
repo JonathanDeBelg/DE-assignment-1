@@ -1,7 +1,7 @@
 {
-    "project_id": "de2022-362611",
-    "data_bucket": "data_de2022_michimalek",
+    "project_id": "de2022-362622",
+    "data_bucket": "data_de2022_401",
     "trainset_filename": "full_data.csv",
     "testset_filename": "test.csv",
-    "model_repo": "model_de2022_michimalek"
+    "model_repo": "model_de2022_401"
 }
