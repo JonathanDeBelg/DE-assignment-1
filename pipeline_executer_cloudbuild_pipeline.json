@@ -3,7 +3,7 @@
             "name": "gcr.io/cloud-builders/gsutil",
             "args": [
                 "cp",
-                "gs://data_de2022/parameters.json",
+                "gs://data_de2022-401/parameters.json",
                 "."
             ]
         },
@@ -12,7 +12,7 @@
             "args": [
                 "--name=iris-predictor-pipeline",
                 "--pipeline_def=./iris_predictor_training_pipeline.json",
-                "--pipeline_root=gs://jads_temp_de2022_michimalek",
+                "--pipeline_root=gs://de_jads_temp-401",
                 "--parameter_dict=./parameters.json"
             ]
         }
