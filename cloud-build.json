@@ -48,9 +48,14 @@
             "args": [
                 "run",
                 "deploy",
+                "ml-app",
                 "--image",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-app"
-
+                "gcr.io/$PROJECT_ID/flask-celery-ml-app",
+                "--region",
+                "us-central1",
+                "--platform",
+                "managed",
+                "--allow-unauthenticated"
             ]
         },
         {
