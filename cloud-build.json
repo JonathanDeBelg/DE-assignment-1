@@ -47,10 +47,10 @@
             "entrypoint": "gcloud",
             "args": [
                 "run",
-                "deploy"
-            ],
-            "images": [
+                "deploy",
+                "--image",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-app"
+
             ]
         },
         {
@@ -59,9 +59,8 @@
             "args": [
                 "run",
                 "deploy",
-                "-port 5000"
-            ],
-            "images": [
+                "--port 5000",
+                "--image",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
         },
