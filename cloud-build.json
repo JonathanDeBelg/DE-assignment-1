@@ -47,8 +47,10 @@
             "entrypoint": "gcloud",
             "args": [
                 "run",
-                "deploy",
-                "--image gcr.io/$PROJECT_ID/flask-celery-ml-app"
+                "deploy"
+            ],
+            "images": [
+                "gcr.io/$PROJECT_ID/flask-celery-ml-app"
             ]
         },
         {
@@ -57,8 +59,10 @@
             "args": [
                 "run",
                 "deploy",
-                "-port 5000",
-                "--image gcr.io/$PROJECT_ID/flask-celery-ml-celery"
+                "-port 5000"
+            ],
+            "images": [
+                "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
         },
         {
@@ -69,9 +73,10 @@
                 "deploy",
                 "-v redis_data/:data",
                 "-p 6379",
-                "-e CELERY_BROKER_URL=redis://redis",
+                "-e CELERY_BROKER_URL=redis://redis"
+            ],
+            "images": [
                 "redis"
-
             ]
         }
     ]
