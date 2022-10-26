@@ -65,6 +65,7 @@
             "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
             "args": [
                 "run",
+                "deploy",
                 "-d",
                 "-v redis_data/:data",
                 "-p 6379",
