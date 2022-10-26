@@ -54,7 +54,6 @@
             "name": "gcr.io/cloud-builders/docker",
             "args": [
                 "run",
-                "-p 80:80",
                 "-d",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
