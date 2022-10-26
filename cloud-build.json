@@ -52,8 +52,10 @@
         },
         {
             "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+            "entrypoint": "gcloud",
             "args": [
                 "run",
+                "deploy",
                 "-p 5000:5000",
                 "-d",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
