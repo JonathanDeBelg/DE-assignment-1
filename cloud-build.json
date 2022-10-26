@@ -43,28 +43,32 @@
             ]
         },
         {
-            "name": "gcr.io/cloud-builders/docker",
+            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+            "entrypoint": "gcloud",
             "args": [
                 "run",
-                "-d",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-app"
+                "deploy",
+                "--image gcr.io/$PROJECT_ID/flask-celery-ml-app"
             ]
         },
         {
-            "name": "gcr.io/cloud-builders/docker",
+            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+            "entrypoint": "gcloud",
             "args": [
                 "run",
-                "-d",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
+                "deploy",
+                "-port 5000",
+                "--image gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
         },
         {
-            "name": "gcr.io/cloud-builders/docker",
+            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+            "entrypoint": "gcloud",
             "args": [
                 "run",
-                "-d",
+                "deploy",
                 "-v redis_data/:data",
-                "-p 6379:6379",
+                "-p 6379",
                 "-e CELERY_BROKER_URL=redis://redis",
                 "redis"
 
