@@ -57,7 +57,6 @@
                 "run",
                 "deploy",
                 "-port 5000",
-                "-d",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
         },
@@ -67,7 +66,6 @@
             "args": [
                 "run",
                 "deploy",
-                "-d",
                 "-v redis_data/:data",
                 "-p 6379",
                 "-e CELERY_BROKER_URL=redis://redis",
