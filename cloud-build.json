@@ -52,7 +52,7 @@
                 "--image",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-app",
                 "--port",
-                "5000"
+                "5000",
                 "--region",
                 "us-central1",
                 "--platform",
