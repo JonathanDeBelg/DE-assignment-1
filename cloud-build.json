@@ -66,8 +66,14 @@
             "args": [
                 "run",
                 "deploy",
+                "ml-celery",
                 "--image",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
+                "gcr.io/$PROJECT_ID/flask-celery-ml-celery",
+                "--region",
+                "us-central1",
+                "--platform",
+                "managed",
+                "--allow-unauthenticated"
             ]
         },
         {
@@ -76,11 +82,20 @@
             "args": [
                 "run",
                 "deploy",
-                "-v redis_data/:data",
-                "-p 6379",
-                "-e CELERY_BROKER_URL=redis://redis",
+                "redis",
+                "-v", 
+                "redis_data/:data",
+                "--port", 
+                "6379",
+                "-e",
+                "CELERY_BROKER_URL=redis://redis",
                 "--image",
-                "redis"
+                "redis",
+                "--region",
+                "us-central1",
+                "--platform",
+                "managed",
+                "--allow-unauthenticated"
             ]
         }
     ]
