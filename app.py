@@ -1,5 +1,6 @@
 
 from flask import Flask, render_template, request
+import os
 
 from celery.result import AsyncResult
 from predict import papp
@@ -36,5 +37,5 @@ def get_result(taskid: str = None):
 if __name__ == "__main__":
     HOST = "0.0.0.0"
     PORT = 5000
-    app.run(HOST,PORT,debug=True)
+    app.run(HOST,int(os.environ.get("PORT", PORT)),debug=True)
 
