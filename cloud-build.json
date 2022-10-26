@@ -43,11 +43,12 @@
             ]
         },
         {
-            "name": "gcr.io/cloud-builders/docker",
+            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
+            "entrypoint": "gcloud",
             "args": [
                 "run",
-                "-d",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-app"
+                "deploy",
+                "--image gcr.io/$PROJECT_ID/flask-celery-ml-app"
             ]
         },
         {
@@ -57,7 +58,7 @@
                 "run",
                 "deploy",
                 "-port 5000",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
+                "--image gcr.io/$PROJECT_ID/flask-celery-ml-celery"
             ]
         },
         {
