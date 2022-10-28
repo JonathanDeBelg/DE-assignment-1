@@ -72,7 +72,7 @@
                 "--set-env-vars",
                 "CELERY_BROKER_URL=redis://redis",
                 "--image",
-                "redis",
+                "us-central1-docker.pkg.dev/redis",
                 "--region",
                 "us-central1",
                 "--platform",
