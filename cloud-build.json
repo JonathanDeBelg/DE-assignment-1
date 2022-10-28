@@ -67,8 +67,6 @@
                 "run",
                 "deploy",
                 "redis",
-                "-v", 
-                "redis_data/:data",
                 "--port", 
                 "6379",
                 "--set-env-vars",
