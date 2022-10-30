@@ -57,24 +57,6 @@
                 "managed",
                 "--allow-unauthenticated"
             ]
-        },
-        {
-            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
-            "entrypoint": "gcloud",
-            "args": [
-                "run",
-                "deploy",
-                "ml-celery",
-                "--image",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-celery",
-                "--port",
-                "default",
-                "--region",
-                "us-central1",
-                "--platform",
-                "managed",
-                "--allow-unauthenticated"
-            ]
         }
     ]
 }
