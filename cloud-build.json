@@ -24,13 +24,6 @@
         {
             "name": "gcr.io/cloud-builders/docker",
             "args": [
-                "pull",
-                "redis"
-            ]
-        },
-        {
-            "name": "gcr.io/cloud-builders/docker",
-            "args": [
                 "push",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-app"
             ]
@@ -40,22 +33,6 @@
             "args": [
                 "push",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery"
-            ]
-        },
-        {
-            "name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
-            "entrypoint": "gcloud",
-            "args": [
-                "run",
-                "deploy",
-                "ml-app",
-                "--image",
-                "gcr.io/$PROJECT_ID/flask-celery-ml-app",
-                "--region",
-                "us-central1",
-                "--platform",
-                "managed",
-                "--allow-unauthenticated"
             ]
         }
     ]
