@@ -16,8 +16,6 @@
                 "build",
                 "-t",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery",
-                "--platform", 
-                "linux/amd64",
                 "-f",
                 "./Dockerfile.celery",
                 "."
@@ -71,6 +69,8 @@
                 "ml-celery",
                 "--image",
                 "gcr.io/$PROJECT_ID/flask-celery-ml-celery",
+                "--port",
+                "default",
                 "--region",
                 "us-central1",
                 "--platform",
