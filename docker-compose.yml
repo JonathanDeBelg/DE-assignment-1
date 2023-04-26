@@ -8,18 +8,14 @@ services:
       - "6379:6379"
     # restart: "always"
   celery:
-    build:
-      context: .
-      dockerfile: Dockerfile.celery
+    image: flask-celery-ml-celery
     depends_on:
       - "redis"
     environment:
       - "CELERY_BROKER_URL=redis://redis"
     # restart: "always"
   app:
-    build:
-      context: .  
-      dockerfile: Dockerfile.app  
+    image: flask-celery-ml-app
     ports:
       - "5000:5000"
     depends_on:
